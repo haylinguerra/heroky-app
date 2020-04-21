@@ -28,7 +28,7 @@ class JobsController extends BaseController {
                 $job = new Job();
                 $job->title = $postData['title'];
                 $job->description = $postData['description'];
-                // $job->fileName = $postData['image'];
+                $job->image = $logo->getClientFileName();
                 $job->save();
                 $responseMessage = 'Job posted';
             }
@@ -41,7 +41,6 @@ class JobsController extends BaseController {
          
 
         }
-        var_dump($responseMessage);
         return $this->renderHTML('addJob.twig', [
             'responseMessage'=> $responseMessage,
         ]);

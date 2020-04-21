@@ -34,10 +34,10 @@
             <li class="work-position">
               <h5> {{job.title}} </h5>
               <p>  {{job.description}} </p>
-              {% if job.fileName == '' %}
+              {% if job.image == '' %}
                 <h5>No image found</h5>
                 {% else %}
-              <p>{{ job.fileName }}</p>
+              <img style="width: 300px;" src="uploads/{{ job.image }}"/><br>
                {% endif %}
               <!-- <p> . $job->getDurationAsString() . </p> -->
               <strong>Achievements:</strong>
